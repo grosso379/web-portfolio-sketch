@@ -1,6 +1,10 @@
 import React from "react";
 import styled, { createGlobalStyle } from "styled-components/macro";
-import Page from "./components/Page";
+import Home from "./components/Home";
+import About from "./components/About";
+import Contact from "./components/Contact";
+import Projects from "./components/Projects";
+import NavBar from "./components/NavBar";
 
 // Sets up global styling
 const GlobalStyle = createGlobalStyle`
@@ -21,18 +25,19 @@ const FullPage = styled.div`
 const StyledPage = styled.section`
   height: 100vh;
   border: 1px solid black;
-  background-color: green;
 `;
 
 function App() {
   return (
     <React.Fragment>
       <GlobalStyle />
+
       <FullPage>
-        <Page className="Home" style={StyledPage} />
-        <Page className="About" style={StyledPage} />
-        <Page className="Portfolio" style={StyledPage} />
-        <Page className="Contact" style={StyledPage} />
+        <NavBar />
+        <Home page={StyledPage} />
+        <About page={StyledPage} />
+        <Contact page={StyledPage} />
+        <Projects page={StyledPage} />
       </FullPage>
     </React.Fragment>
   );
