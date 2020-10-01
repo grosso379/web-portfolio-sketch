@@ -43,7 +43,7 @@ const LinksList = styled.ul`
   flex-direction: column;
   width: 100vw;
   height: ${(props) => (props.activado ? "300px" : "0px")};
-  /* overflow: hidden; */
+  overflow: ${(props) => (props.activado ? "visible" : "hidden")};
   transition: 0.5s ease-out;
 
   a {
@@ -65,8 +65,11 @@ function NavBar() {
   function handleClick() {
     setDisplay(!display);
   }
+  function handleLinkClick() {
+    setDisplay(false);
+  }
 
-  const [display, setDisplay] = useState(true);
+  const [display, setDisplay] = useState(false);
 
   const sections = ["Home", "About", "Projects", "Contact"];
 
@@ -80,7 +83,7 @@ function NavBar() {
         smooth={true}
         offset={-56}
         duration={500}
-        onClick={handleClick}
+        onClick={handleLinkClick}
       >
         {name}
       </Link>
