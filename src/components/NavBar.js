@@ -17,6 +17,11 @@ const NavBarItems = styled.nav`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media (min-width: 600px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 `;
 
 const Container = styled.div`
@@ -27,6 +32,11 @@ const Container = styled.div`
   width: 100vw;
   height: 3.5rem;
   padding: 1rem 1rem;
+
+  @media (min-width: 600px) {
+    width: auto;
+    justify-content: left;
+  }
 `;
 
 const Logo = styled.h1`
@@ -35,6 +45,10 @@ const Logo = styled.h1`
 
 const MenuIcon = styled.div`
   font-size: 2rem;
+
+  @media (min-width: 600px) {
+    display: none;
+  }
 `;
 
 const LinksList = styled.ul`
@@ -58,6 +72,21 @@ const LinksList = styled.ul`
 
   a:last-child {
     padding-bottom: 1rem;
+  }
+
+  @media (min-width: 600px) {
+    display: flex;
+    flex-direction: row;
+    height: fit-content;
+    width: auto;
+    overflow: visible;
+    background-color: inherit;
+
+    a {
+      display: block;
+      padding: 1rem;
+      text-align: center;
+    }
   }
 `;
 
