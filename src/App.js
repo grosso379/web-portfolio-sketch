@@ -24,7 +24,6 @@ const FullPage = styled.div`
 // Base style for all pages
 const StyledPage = styled.section`
   height: 100vh;
-  border: 1px solid black;
 `;
 
 function App() {

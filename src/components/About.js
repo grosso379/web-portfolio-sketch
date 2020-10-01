@@ -8,7 +8,7 @@ function About({ page }) {
 
   return (
     <PageWrapper id="about">
-      <h2 id="about">About</h2>
+      <h2>About</h2>
     </PageWrapper>
   );
 }
