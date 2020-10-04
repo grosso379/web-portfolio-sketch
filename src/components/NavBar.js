@@ -17,8 +17,10 @@ const NavBarItems = styled.nav`
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: 100;
 
-  @media (min-width: 600px) {
+  /* Display changes to show Logo and LinksList next to each other*/
+  @media (min-width: 700px) {
     flex-direction: row;
     justify-content: space-between;
   }
@@ -33,20 +35,22 @@ const Container = styled.div`
   height: 3.5rem;
   padding: 1rem 1rem;
 
-  @media (min-width: 600px) {
+  /* Display changes to show Logo and LinksList next to each other*/
+  @media (min-width: 700px) {
     width: auto;
     justify-content: left;
   }
 `;
 
 const Logo = styled.h1`
-  font-size: 1.5rem;
+  font-size: 1.6rem;
 `;
 
 const MenuIcon = styled.div`
   font-size: 2rem;
 
-  @media (min-width: 600px) {
+  /* Menu icon only shows for phone display */
+  @media (min-width: 700px) {
     display: none;
   }
 `;
@@ -56,6 +60,7 @@ const LinksList = styled.ul`
   display: flex;
   flex-direction: column;
   width: 100vw;
+  /* Height and overflow depend on activado to manage animation of menu in phones */
   height: ${(props) => (props.activado ? "300px" : "0px")};
   overflow: ${(props) => (props.activado ? "visible" : "hidden")};
   transition: 0.5s ease-out;
@@ -66,6 +71,7 @@ const LinksList = styled.ul`
     text-align: center;
   }
 
+  /* Extra padding to first and last child so all of them have same overall padding */
   a:first-child {
     padding-top: 1rem;
   }
@@ -74,26 +80,30 @@ const LinksList = styled.ul`
     padding-bottom: 1rem;
   }
 
-  @media (min-width: 600px) {
+  /* Change all the properties related to the animation because pc doesn't have animation */
+  @media (min-width: 700px) {
     display: flex;
     flex-direction: row;
     height: fit-content;
     width: auto;
     overflow: visible;
     background-color: inherit;
+    font-size: 1.6rem;
 
     a {
       display: block;
-      padding: 1rem;
+      padding: 0rem 1.5rem !important;
       text-align: center;
     }
   }
 `;
 
 function NavBar() {
+  // HandleClick for menuIcon so when it's clicked the display changes value
   function handleClick() {
     setDisplay(!display);
   }
+  // HandleClick for menuItems so when they are click display becomes false
   function handleLinkClick() {
     setDisplay(false);
   }
