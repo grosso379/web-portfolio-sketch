@@ -69,6 +69,15 @@ const LinksList = styled.ul`
     display: block;
     padding: 0.5rem 1.5rem;
     text-align: center;
+    cursor: pointer;
+  }
+
+  a:hover {
+    color: #d91b6a;
+  }
+
+  .active {
+    color: #d91b6a;
   }
 
   /* Extra padding to first and last child so all of them have same overall padding */
