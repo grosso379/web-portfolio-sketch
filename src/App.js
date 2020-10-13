@@ -35,8 +35,8 @@ function App() {
         <NavBar />
         <Home page={StyledPage} />
         <About page={StyledPage} />
-        <Contact page={StyledPage} />
         <Projects page={StyledPage} />
+        <Contact page={StyledPage} />
       </FullPage>
     </React.Fragment>
   );
