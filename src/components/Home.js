@@ -39,6 +39,8 @@ function Home({ page }) {
       z-index: 11;
       font-size: 3rem;
       user-select: none;
+      padding-bottom: 6rem;
+      text-shadow: 2px 2px 4px black;
 
       span {
         color: #d91b6a;
