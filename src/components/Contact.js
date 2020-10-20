@@ -11,8 +11,16 @@ function validateEmail(inputText){
   }
 }
 
-function validateName(){
-
+function validateText(inputText){
+  let text = inputText.value;
+  let regExp = /[a-zA-Z]/g;
+  let n = text.length
+  if (n > 3 && regExp.test(text)){
+    console.log('a')
+    return true;
+  } else {
+    return false;
+  }
 }
 
 const Heading = styled.div`
@@ -75,10 +83,13 @@ const FormContainer = styled.form`
     cursor: pointer;
   }
 
-  button:hover {
-    transition: 0.5s;
-    color: #d91b6a;
-    border-color: #d91b6a;
+  /* Only use hover when the user is not in touchscreen */
+  @media(hover: hover){
+    button:hover {
+      transition: 0.5s;
+      color: #d91b6a;
+      border-color: #d91b6a;
+    }
   }
 `
 
@@ -102,10 +113,18 @@ function Contact({ page }) {
   `;
 
   function handleClick() {
-    let validEmail = validateEmail(document.getElementById('Email'))
+    let validName = validateText(document.getElementById('Name'));
+    let validEmail = validateEmail(document.getElementById('Email'));
+    let validMessage = validateText(document.getElementById('Message'));
 
-    if (!validEmail){
-      alert('You need to enter a valid email')
+    if (!validName){
+      alert('You need to enter a valid name');
+    } else if (!validEmail){
+      alert('You need to enter a valid email');
+    } else if (!validMessage){
+      alert('You need to enter a valid message');
+    } else {
+      alert('all good')
     }
   }
 
