@@ -72,10 +72,6 @@ const LinksList = styled.ul`
     cursor: pointer;
   }
 
-  a:hover {
-    color: #d91b6a;
-  }
-
   .active {
     color: #d91b6a;
   }
@@ -103,6 +99,10 @@ const LinksList = styled.ul`
       display: block;
       padding: 0rem 1.5rem !important;
       text-align: center;
+    }
+
+    a:hover {
+      color: #d91b6a;
     }
   }
 `;

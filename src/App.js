@@ -23,7 +23,7 @@ const FullPage = styled.div`
 
 // Base style for all pages
 const StyledPage = styled.section`
-  height: 100vh;
+  height: calc(100vh - 3.65rem);
 `;
 
 function App() {
