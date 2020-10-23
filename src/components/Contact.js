@@ -1,7 +1,7 @@
 import React from "react";
 import { icons } from "react-icons";
 import styled from "styled-components/macro";
-import {FaLinkedin, FaInstagram, FaFacebook} from "react-icons/fa";
+import {FaLinkedin, FaInstagram, FaFacebook, FaCopyright} from "react-icons/fa";
 
 function validateEmail(inputText){
   // Checking for a valid email
@@ -98,7 +98,6 @@ const FormContainer = styled.form`
 `
 
 const IconContainer = styled.ul`
-  flex-grow: 2;
   padding-top:2.5vh;
   margin-top: 5vh;
   width: 100vw;
@@ -106,13 +105,14 @@ const IconContainer = styled.ul`
   display:flex;
   color: white;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
 
   a {
     color:white;
     text-decoration:none;
-    margin: 0 10vw;
+    /* margin: 0 10vw; */
     transition: transform 1s;
+    margin: 2rem 0;
   }
 
   svg {
@@ -135,9 +135,19 @@ const IconContainer = styled.ul`
   } 
 `
 
+const Copyright = styled.div`
+  background-color: #1B242F;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  color: white;
+  padding-bottom: 1rem;
+`
+
 function Contact({ page }) {
   const PageWrapper = styled(page)`
-    height: 100vh !important;
+    min-height: calc(100vh - 3.65rem);
+    height: auto;
     background-color: #232732;
     display: flex;
     flex-direction: column;
@@ -180,6 +190,7 @@ function Contact({ page }) {
         <a href="https://www.instagram.com/juan_grosso/" target="_blank"><FaInstagram /></a>
         <a href="https://www.linkedin.com/in/juangrosso379/" target="_blank"><FaLinkedin /></a>
       </IconContainer>
+      <Copyright>Juan Grosso&nbsp;<FaCopyright/>&nbsp;2020</Copyright>
     </PageWrapper>
   );
 }

@@ -13,6 +13,7 @@ const GlobalStyle = createGlobalStyle`
       padding:0;
       box-sizing:border-box;
       font-family: "Lato", Helvetica, Arial, sans-serif;
+      max-width: 100%!important;
   }
 `;
 
