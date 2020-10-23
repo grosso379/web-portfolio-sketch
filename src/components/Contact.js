@@ -1,7 +1,10 @@
 import React from "react";
+import { icons } from "react-icons";
 import styled from "styled-components/macro";
+import {FaLinkedin, FaInstagram, FaFacebook} from "react-icons/fa";
 
 function validateEmail(inputText){
+  // Checking for a valid email
   var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
   if(inputText.value.match(mailformat)){
     return true;
@@ -12,6 +15,7 @@ function validateEmail(inputText){
 }
 
 function validateText(inputText){
+  // Checking for letters and at least 3 characters
   let text = inputText.value;
   let regExp = /[a-zA-Z]/g;
   let n = text.length
@@ -93,13 +97,42 @@ const FormContainer = styled.form`
   }
 `
 
-const IconContainer = styled.div`
+const IconContainer = styled.ul`
   flex-grow: 2;
   padding-top:2.5vh;
   margin-top: 5vh;
   width: 100vw;
   background-color: #1B242F;
   display:flex;
+  color: white;
+  align-items: center;
+  justify-content: center;
+
+  a {
+    color:white;
+    text-decoration:none;
+    margin: 0 10vw;
+    transition: transform 1s;
+  }
+
+  svg {
+    height: 3rem;
+    width: 3rem;
+    cursor: pointer;
+    /* transition: transform 0.5s; */
+    transition: color 1s;
+  }
+
+  @media(hover: hover){
+    svg:hover {
+      color: #d91b6a;
+      /* transform: scale(1.50); */
+    }
+
+    a:hover {
+      transform: rotateY(360deg)
+    }
+  } 
 `
 
 function Contact({ page }) {
@@ -112,6 +145,8 @@ function Contact({ page }) {
     justify-content: center;
   `;
 
+  // Function to handle submit button click
+  // Checks if the form is valid and sends email in case it is 
   function handleClick() {
     let validName = validateText(document.getElementById('Name'));
     let validEmail = validateEmail(document.getElementById('Email'));
@@ -140,7 +175,11 @@ function Contact({ page }) {
         <textarea id='Message'name="Message" placeholder="Leave a message please" rows="20" cols="4"></textarea>
         <button type='button' onClick={handleClick}>Submit</button>
       </FormContainer>
-      <IconContainer></IconContainer>
+      <IconContainer>
+        <a href="https://www.facebook.com/juancruz.grosso.14/" target="_blank"><FaFacebook /></a>
+        <a href="https://www.instagram.com/juan_grosso/" target="_blank"><FaInstagram /></a>
+        <a href="https://www.linkedin.com/in/juangrosso379/" target="_blank"><FaLinkedin /></a>
+      </IconContainer>
     </PageWrapper>
   );
 }
