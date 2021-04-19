@@ -142,7 +142,7 @@ function NavBar() {
     <NavBarItems>
       <Container>
         <Logo>
-          React <i className="fab fa-react"></i>
+          Juan Grosso <i className="fab fa-react"></i>
         </Logo>
         <MenuIcon onClick={handleClick}>
           <i class="fas fa-bars"></i>

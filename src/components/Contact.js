@@ -36,9 +36,9 @@ function sendEmail(name, email, message){
     "email":email,
     "message":message
   }
-  let service_id = "service_2cv2psp"
-  let template_id = "template_dqtnd0e"
-  let user_id = "user_mXyRsZ5HZHXxyH894jTIx"
+  let service_id = process.env.REACT_APP_SERVICE_ID
+  let template_id = process.env.REACT_APP_TEMPLATE_ID
+  let user_id = process.env.REACT_APP_USER_ID
   emailjs.send(service_id, template_id, template_params, user_id)
     .then((response) => {
       toast.success('Email sent correctly', {
@@ -98,6 +98,10 @@ const FormContainer = styled.form`
     border: 1px solid #637082;
     margin: 2px;
     color: white;
+
+    ::placeholder {
+      color: white;
+    }
   }
 
   textarea {
@@ -109,6 +113,10 @@ const FormContainer = styled.form`
     border: 1px solid #637082;
     margin: 2px;
     color: white;
+
+    ::placeholder {
+      color: white;
+    }
   }
 
   button {

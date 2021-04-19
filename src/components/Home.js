@@ -17,7 +17,7 @@ function Home({ page }) {
       background-size: cover;
       background-repeat: no-repeat;
       background-position: 50% 50%;
-      filter: brightness(0.5);
+      filter: brightness(1);
 
       /* background-color: blue; */
 
@@ -49,7 +49,7 @@ function Home({ page }) {
         params={{
           particles: {
             number: {
-              value: 150,
+              value: 200,
               density: {
                 enable: true,
                 value_area: 1000,
