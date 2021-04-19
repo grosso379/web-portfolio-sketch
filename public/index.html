@@ -45,5 +45,19 @@
     <div id="root"></div>
     <script type="text/javascript" src="../src/particles/particles.js"></script>
     <script type="text/javascript" src="../src/particles/app.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script type="text/javascript">
+      function sendEmail(message) {
+        Email.send({
+        SecureToken:"9057f77c-22a3-4c75-99c9-d6c73ec663f6",
+        To : 'grosso379@gmail.com',
+        From : "grosso379@gmail.com",
+        Subject : "New Web Portfolio Message",
+        Body : message
+      }).then(
+        message => alert(message)
+      );
+      }
+    </script>
   </body>
 </html>

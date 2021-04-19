@@ -1,12 +1,16 @@
 import React from "react";
-import { icons } from "react-icons";
 import styled from "styled-components/macro";
 import {FaLinkedin, FaInstagram, FaFacebook, FaCopyright} from "react-icons/fa";
+import emailjs from 'emailjs-com';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+// emailinit("user_mXyRsZ5HZHXxyH894jTIx");
 
 function validateEmail(inputText){
   // Checking for a valid email
   var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-  if(inputText.value.match(mailformat)){
+  if(inputText.match(mailformat)){
     return true;
   }
   else{
@@ -16,15 +20,48 @@ function validateEmail(inputText){
 
 function validateText(inputText){
   // Checking for letters and at least 3 characters
-  let text = inputText.value;
+  let text = inputText;
   let regExp = /[a-zA-Z]/g;
   let n = text.length
   if (n > 3 && regExp.test(text)){
-    console.log('a')
     return true;
   } else {
     return false;
   }
+}
+
+function sendEmail(name, email, message){
+  let template_params = {
+    "name":name,
+    "email":email,
+    "message":message
+  }
+  let service_id = "service_2cv2psp"
+  let template_id = "template_dqtnd0e"
+  let user_id = "user_mXyRsZ5HZHXxyH894jTIx"
+  emailjs.send(service_id, template_id, template_params, user_id)
+    .then((response) => {
+      toast.success('Email sent correctly', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+    })
+    .catch(err => {
+      toast.error('There was an error while sending the email, sorry', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+    })
 }
 
 const Heading = styled.div`
@@ -58,7 +95,7 @@ const FormContainer = styled.form`
     line-height: 1.75rem;
     font-size: 1rem;
     padding: 0px 0.5rem;
-    border: none;
+    border: 1px solid #637082;
     margin: 2px;
     color: white;
   }
@@ -69,7 +106,7 @@ const FormContainer = styled.form`
     line-height: 1.75rem;
     font-size: 1rem;
     padding: 0px 0.5rem;
-    border: none;
+    border: 1px solid #637082;
     margin: 2px;
     color: white;
   }
@@ -158,18 +195,18 @@ function Contact({ page }) {
   // Function to handle submit button click
   // Checks if the form is valid and sends email in case it is 
   function handleClick() {
-    let validName = validateText(document.getElementById('Name'));
-    let validEmail = validateEmail(document.getElementById('Email'));
-    let validMessage = validateText(document.getElementById('Message'));
+    let name = document.getElementById('Name').value
+    let email = document.getElementById('Email').value
+    let message = document.getElementById('Message').value
 
-    if (!validName){
+    if (!validateText(name)){
       alert('You need to enter a valid name');
-    } else if (!validEmail){
+    } else if (!validateEmail(email)){
       alert('You need to enter a valid email');
-    } else if (!validMessage){
+    } else if (!validateText(message)){
       alert('You need to enter a valid message');
     } else {
-      alert('all good')
+      sendEmail(name, email, message);
     }
   }
 
@@ -191,6 +228,20 @@ function Contact({ page }) {
         <a href="https://www.linkedin.com/in/juangrosso379/" target="_blank"><FaLinkedin /></a>
       </IconContainer>
       <Copyright>Juan Grosso&nbsp;<FaCopyright/>&nbsp;2020</Copyright>
+      
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        />
+        {/* Same as */}
+      <ToastContainer />
     </PageWrapper>
   );
 }
