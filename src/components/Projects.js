@@ -18,6 +18,7 @@ const Item = styled.div`
   background-size: contain;
   background-repeat: no-repeat;
   background-position: 50% 50%;
+  /* background-size: 90%; */
   transition: 0.5s;
 
   @media(hover: hover){
@@ -76,7 +77,6 @@ const PageWrapper = styled.div`
   }
   #calculator{
     background-image:url(${process.env.PUBLIC_URL + "calculatorMobile.PNG"});
-    background-size: 90%;
   }
   }
 `;
