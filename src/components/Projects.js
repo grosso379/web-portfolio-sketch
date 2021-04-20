@@ -18,7 +18,9 @@ const Item = styled.div`
   background-size: contain;
   background-repeat: no-repeat;
   background-position: 50% 50%;
-  /* background-size: 90%; */
+  @media (max-width: 800px) {
+    background-size: 90%;
+  }
   transition: 0.5s;
 
   @media(hover: hover){
