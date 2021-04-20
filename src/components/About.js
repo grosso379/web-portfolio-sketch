@@ -40,7 +40,7 @@ const PageWrapper = styled.div`
       display: flex;
       align-items: center;
       justify-content: center;
-      background-image:url(${process.env.PUBLIC_URL + "myself.jpg"});
+      background-image: linear-gradient(to bottom, rgba(0,0, 0, .3), rgba(0,0, 0, .3)), url(${process.env.PUBLIC_URL + "myself.jpg"});
       background-size: cover;
       background-position: 40% 10%;
       text-shadow: 1px 1px black;
