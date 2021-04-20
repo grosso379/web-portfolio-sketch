@@ -76,6 +76,7 @@ const PageWrapper = styled.div`
   }
   #calculator{
     background-image:url(${process.env.PUBLIC_URL + "calculatorMobile.PNG"});
+    background-size: 90%;
   }
   }
 `;
