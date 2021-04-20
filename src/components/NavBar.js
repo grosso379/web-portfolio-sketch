@@ -20,7 +20,7 @@ const NavBarItems = styled.nav`
   z-index: 100;
 
   /* Display changes to show Logo and LinksList next to each other*/
-  @media (min-width: 700px) {
+  @media (min-width: 800px) {
     flex-direction: row;
     justify-content: space-between;
   }
@@ -36,7 +36,7 @@ const Container = styled.div`
   padding: 1rem 1rem;
 
   /* Display changes to show Logo and LinksList next to each other*/
-  @media (min-width: 700px) {
+  @media (min-width: 800px) {
     width: auto;
     justify-content: left;
   }
@@ -50,7 +50,7 @@ const MenuIcon = styled.div`
   font-size: 2rem;
 
   /* Menu icon only shows for phone display */
-  @media (min-width: 700px) {
+  @media (min-width: 800px) {
     display: none;
   }
 `;
@@ -59,6 +59,7 @@ const LinksList = styled.ul`
   background-color: #383d39;
   display: flex;
   flex-direction: column;
+  margin: 0;
   width: 100vw;
   /* Height and overflow depend on activado to manage animation of menu in phones */
   height: ${(props) => (props.activado ? "300px" : "0px")};
@@ -70,6 +71,7 @@ const LinksList = styled.ul`
     padding: 0.5rem 1.5rem;
     text-align: center;
     cursor: pointer;
+    color: white;
   }
 
   .active {
@@ -86,7 +88,7 @@ const LinksList = styled.ul`
   }
 
   /* Change all the properties related to the animation because pc doesn't have animation */
-  @media (min-width: 700px) {
+  @media (min-width: 800px) {
     display: flex;
     flex-direction: row;
     height: fit-content;
@@ -125,11 +127,12 @@ function NavBar() {
     return (
       <Link
         className="link"
+        key={name}
         activeClass="active"
         to={name.toLowerCase()}
         spy={true}
         smooth={true}
-        offset={-56}
+        offset={-57}
         duration={500}
         onClick={handleLinkClick}
       >
@@ -145,7 +148,7 @@ function NavBar() {
           Juan Grosso <i className="fab fa-react"></i>
         </Logo>
         <MenuIcon onClick={handleClick}>
-          <i class="fas fa-bars"></i>
+          <i className="fas fa-bars"></i>
         </MenuIcon>
       </Container>
       <LinksList activado={display}>{links}</LinksList>

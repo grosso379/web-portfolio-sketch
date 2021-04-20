@@ -14,6 +14,9 @@ const GlobalStyle = createGlobalStyle`
       box-sizing:border-box;
       font-family: "Lato", Helvetica, Arial, sans-serif;
       max-width: 100%!important;
+      ::-webkit-scrollbar {
+        display: none;
+      }
   }
 `;
 
@@ -22,22 +25,17 @@ const FullPage = styled.div`
   min-height: 100vh;
 `;
 
-// Base style for all pages
-const StyledPage = styled.section`
-  height: calc(100vh - 3.65rem);
-`;
-
 function App() {
   return (
     <React.Fragment>
       <GlobalStyle />
 
       <FullPage>
-        <NavBar />
-        <Home page={StyledPage} />
-        <About page={StyledPage} />
-        <Projects page={StyledPage} />
-        <Contact page={StyledPage} />
+        <NavBar/>
+        <Home/>
+        <About/>
+        <Projects/>
+        <Contact/>
       </FullPage>
     </React.Fragment>
   );

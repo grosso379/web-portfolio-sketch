@@ -36,8 +36,8 @@ function sendEmail(name, email, message){
     "email":email,
     "message":message
   }
-  let service_id = process.env.REACT_APP_SERVICE_ID
-  let template_id = process.env.REACT_APP_TEMPLATE_ID
+  let service_id = "service_2cv2psp"
+  let template_id = "template_dqtnd0e"
   let user_id = process.env.REACT_APP_USER_ID
   emailjs.send(service_id, template_id, template_params, user_id)
     .then((response) => {
@@ -189,8 +189,8 @@ const Copyright = styled.div`
   padding-bottom: 1rem;
 `
 
-function Contact({ page }) {
-  const PageWrapper = styled(page)`
+const PageWrapper = styled.div`
+    height: calc(100vh - 3.65rem);
     min-height: calc(100vh - 3.65rem);
     height: auto;
     background-color: #232732;
@@ -200,6 +200,7 @@ function Contact({ page }) {
     justify-content: center;
   `;
 
+function Contact() {
   // Function to handle submit button click
   // Checks if the form is valid and sends email in case it is 
   function handleClick() {
@@ -231,9 +232,9 @@ function Contact({ page }) {
         <button type='button' onClick={handleClick}>Submit</button>
       </FormContainer>
       <IconContainer>
-        <a href="https://www.facebook.com/juancruz.grosso.14/" target="_blank"><FaFacebook /></a>
-        <a href="https://www.instagram.com/juan_grosso/" target="_blank"><FaInstagram /></a>
-        <a href="https://www.linkedin.com/in/juangrosso379/" target="_blank"><FaLinkedin /></a>
+        <a href="https://www.facebook.com/juancruz.grosso.14/" target="_blank" rel="noopener noreferrer"><FaFacebook /></a>
+        <a href="https://www.instagram.com/juan_grosso/" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
+        <a href="https://www.linkedin.com/in/juangrosso379/" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
       </IconContainer>
       <Copyright>Juan Grosso&nbsp;<FaCopyright/>&nbsp;2020</Copyright>
       

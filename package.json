@@ -9,6 +9,7 @@
     "emailjs-com": "^2.6.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-elastic-carousel": "^0.11.5",
     "react-icons": "^3.11.0",
     "react-particles-js": "^3.3.0",
     "react-script-tag": "^1.1.2",

@@ -2,8 +2,8 @@ import React from "react";
 import styled from "styled-components/macro";
 import Particles from "react-particles-js";
 
-function Home({ page }) {
-  const PageWrapper = styled(page)`
+const PageWrapper = styled.div`
+    height: calc(100vh - 3.65rem);
     margin-top: 3.5rem;
     position: relative;
     display: flex;
@@ -42,6 +42,7 @@ function Home({ page }) {
     }
   `;
 
+function Home() {
   return (
     <PageWrapper id="home">
       {/* Sets particles in the background */}
