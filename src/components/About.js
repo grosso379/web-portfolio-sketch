@@ -15,17 +15,27 @@ const ImageContainer = styled.div`
 const Description = styled.div`
   color: white;
   padding: 5% 10% ;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
   h2 {
     font-family: 'Playfair Display', serif;
     font-size: 3rem;
     padding: 1rem 0rem;
+    @media (min-width: 800px){
+      font-size: 7vmin;
+    }
   }
 
   h4 {
     font-family: "Raleway", sans-serif;
+    padding: 1rem 0rem;
     line-height: 1.5rem;
     font-size: 1rem;
-    padding: 1rem 0rem;
+    @media (min-width: 800px){
+      font-size: 2.5vmin;
+      line-height:5vmin;
+    }
   }
 `
 

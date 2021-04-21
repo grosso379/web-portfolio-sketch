@@ -26,6 +26,7 @@ const FullPage = styled.div`
 `;
 
 function App() {
+
   return (
     <React.Fragment>
       <GlobalStyle />
