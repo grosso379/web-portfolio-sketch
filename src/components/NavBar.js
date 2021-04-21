@@ -116,8 +116,6 @@ function NavBar() {
   }
   // HandleClick for menuItems so when they are click display becomes false
   function handleLinkClick(event) {
-    event.persist()
-    event.target.click()
     setDisplay(false);
   }
   const [display, setDisplay] = useState(false);
