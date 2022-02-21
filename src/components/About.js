@@ -63,10 +63,10 @@ function About() {
       <ImageContainer></ImageContainer>
       <Description>
         <h2>Juan Grosso</h2>
-        <h4>I am an international student passionate about programming and solving problems in creative ways. At Northwest Missouri State University where I am completing my sophomore 
-          year in Computer Science, I have learned the basic knowledge to develop RESTful applications. Moreover, working on personal projects helped me put these concepts into practice.
-           This allowed me to land a position at the Learning and Teaching Center as a software developer where I am currently working with a team of developers to maintain, update, and 
-           create applications for NWMSU. 
+        <h4>I am an international student passionate about programming and solving problems in creative ways. At Northwest Missouri State University where I am completing my junior 
+          year in Computer Science, I have learned to develop RESTful applications. Moreover, working on personal projects helped me put these concepts into practice allowing me to showcase 
+          my skills. This allowed me to land a position at the Learning and Teaching Center as a software developer where I am currently working with a team of developers to design, develop, 
+          update, and maintain applications for NWMSU. 
         </h4>
       </Description>
     </PageWrapper>

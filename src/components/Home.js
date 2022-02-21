@@ -92,7 +92,7 @@ function Home() {
       <h1>
         Hello, I'm <span>Juan Grosso.</span>
         <br />
-        I'm a full-stack web developer
+        I'm a full-stack software developer
       </h1>
     </PageWrapper>
   );
