@@ -76,9 +76,13 @@ function About() {
       <Description>
         <h2><ResumeContainer title="My Resume" href={process.env.PUBLIC_URL + "Resume.pdf"} target="_blank">Juan Grosso</ResumeContainer></h2>
         <h4>I am an international student passionate about programming and solving problems in creative ways. At Northwest Missouri State University where I am completing my junior 
-          year in Computer Science, I have learned to develop RESTful applications. Moreover, working on personal projects helped me put these concepts into practice allowing me to showcase 
+          year in Computer Science, I have learned to develop RESTful applications. 
+          <br></br>
+          Moreover, working on personal projects helped me put these concepts into practice allowing me to showcase 
           my skills. This allowed me to land a position at the Learning and Teaching Center as a software developer where I am currently working with a team of developers to design, develop, 
           update, and maintain applications for NWMSU. 
+          <br></br>
+          This summer 2022 I will be joining Linkedin as a remote software engineer intern working for their San Francisco office.
         </h4>
       </Description>
     </PageWrapper>
