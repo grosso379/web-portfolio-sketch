@@ -12,6 +12,22 @@ const ImageContainer = styled.div`
   }
 `
 
+const ResumeContainer = styled.a`
+  padding: 1rem 0rem;
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  color: white;
+  text-decoration: none;
+  @media (min-width: 800px){
+    font-size: 7vmin;
+    :hover{
+      text-decoration: none;
+      color: #d91b6a;
+      cursor:pointer;
+    }
+  }
+`;
+
 const Description = styled.div`
   color: white;
   padding: 5% 10% ;
@@ -19,11 +35,7 @@ const Description = styled.div`
   flex-direction: column;
   align-items: left;
   h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 3rem;
-    padding: 1rem 0rem;
-    @media (min-width: 800px){
-      font-size: 7vmin;
+    width: fit-content;
     }
   }
 
@@ -62,7 +74,7 @@ function About() {
     <PageWrapper id="about">
       <ImageContainer></ImageContainer>
       <Description>
-        <h2>Juan Grosso</h2>
+        <h2><ResumeContainer title="My Resume" href={process.env.PUBLIC_URL + "Resume.pdf"} target="_blank">Juan Grosso</ResumeContainer></h2>
         <h4>I am an international student passionate about programming and solving problems in creative ways. At Northwest Missouri State University where I am completing my junior 
           year in Computer Science, I have learned to develop RESTful applications. Moreover, working on personal projects helped me put these concepts into practice allowing me to showcase 
           my skills. This allowed me to land a position at the Learning and Teaching Center as a software developer where I am currently working with a team of developers to design, develop, 
