@@ -18,8 +18,6 @@ function sendEmail(name, message){
   //Create link element and link it to the file's url
   const link = document.createElement("a");
   link.href = `mailto:grosso379@gmail.com?subject=Contact email from ${name}&body=${message}`;
-  link.setAttribute("download", "PAFs.zip");
-  document.body.appendChild(link);
   //Click and download file
   link.click();
 }
@@ -193,7 +191,7 @@ function Contact() {
         <a href="https://www.linkedin.com/in/juangrosso379/" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
         <a href="https://github.com/grosso379" target="_blank" rel="noopener noreferrer"><FaGithub /></a>
       </IconContainer>
-      <Copyright>Juan Grosso&nbsp;<FaCopyright/>&nbsp;2020</Copyright>
+      <Copyright>Juan Grosso&nbsp;<FaCopyright/>&nbsp;2023</Copyright>
     </PageWrapper>
   );
 }
